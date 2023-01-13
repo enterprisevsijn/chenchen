@@ -1,0 +1,25 @@
+CREATE TABLE `student` (
+  `id` INT(9) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT COMMENT '学生学号',
+  `name` VARCHAR(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT '匿名' COMMENT '学生姓名',
+  `sex` VARCHAR(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT 'male' COMMENT '学生性别',
+  `age` INT NOT NULL DEFAULT '0' COMMENT '学生年龄',
+  `classid` INT DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_classid` (`classid`),
+  CONSTRAINT `FK_classid` FOREIGN KEY (`classid`) REFERENCES `class` (`classid`)
+) ENGINE=INNODB AUTO_INCREMENT=111111112 DEFAULT CHARSET=utf8mb3
+CREATE TABLE IF NOT EXISTS `class`(
+   `classid`INT(100)NOT NULL AUTO_INCREMENT,
+   `studentids` INT(100) NOT NULL,
+   `year`YEAR,
+   PRIMARY KEY (`classid`)
+)ENGINE=INNODB DEFAULT CHARSET=utf8
+INSERT INTO `student`(`id`,`name`,`sex`,`age`)VALUE (33,11,'female',144)
+INSERT INTO `class`(`classid`,`studentids`,`joinyear`)VALUE(11,11,'2019.12.11')
+ALTER TABLE `class`CHANGE COLUMN `when_joinin_class` `joinyear` VARCHAR(100)
+SET FOREIGN KEY  =0
+SET FOREIGN_KEY_CHECKS `classid`= 0
+DELETE FROM`student` WHERE `id`=11
+ORDER BY `id`FROM `student` 
+UPDATE `student`SET `name`='ll',`sex`='femalee',`age`='144',`classid`='18'WHERE id=122
+SELECT*FROM `student`WHERE `id`=13`school`
